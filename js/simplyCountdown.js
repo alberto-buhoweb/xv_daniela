@@ -162,18 +162,19 @@
             parameters.seconds
         );
 
-        if (parameters.enableUtc) {
-            targetDate = new Date(
-                targetTmpDate.getUTCFullYear(),
-                targetTmpDate.getUTCMonth(),
-                targetTmpDate.getUTCDate(),
-                targetTmpDate.getUTCHours(),
-                targetTmpDate.getUTCMinutes(),
-                targetTmpDate.getUTCSeconds()
-            );
-        } else {
-            targetDate = targetTmpDate;
-        }
+        targetDate = targetTmpDate;
+        //if (parameters.enableUtc) {
+         //   targetDate = new Date(
+         //       targetTmpDate.getUTCFullYear(),
+         //       targetTmpDate.getUTCMonth(),
+         //       targetTmpDate.getUTCDate(),
+         //       targetTmpDate.getUTCHours(),
+         //       targetTmpDate.getUTCMinutes(),
+         //       targetTmpDate.getUTCSeconds()
+         //   );
+        //} else {
+        //    targetDate = targetTmpDate;
+        //}
 
         Array.prototype.forEach.call(cd, function (countdown) {
             var fullCountDown = createElements(parameters, countdown),
