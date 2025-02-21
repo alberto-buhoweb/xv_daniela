@@ -4,32 +4,30 @@ $errors = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get POST data
     $name = isset($_POST['name']) ? strip_tags(trim($_POST['name'])) : '';
-    $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
+    $email = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 
-    echo $name;
-    echo $phone;
     // Validate form fields
     if (empty($name)) {
         $errors[] = 'Name is empty';
     }
 
-    if (empty($phone)) {
+    if (empty($email)) {
         $errors[] = 'Phone is empty';
     } 
 
-    // If no errors, send phone
+    // If no errors, send email
     if (empty($errors)) {
-        // Recipient phone address (replace with your own)
+        // Recipient email address (replace with your own)
         $recipient = "alberto.aguilar.serna@gmail.com";
 
         // Additional headers
-        $headers = "From: $name <$phone>";
+        $headers = "From: $name <$email>";
 
-        // Send phone
+        // Send email
         if (mail($recipient, $message, $headers)) {
-            echo "phone sent successfully!";
+            echo "Email sent successfully!";
         } else {
-            echo "Failed to send phone. Please try again later.";
+            echo "Failed to send email. Please try again later.";
         }
     } else {
         // Display errors
