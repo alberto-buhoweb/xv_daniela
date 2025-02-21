@@ -50,7 +50,10 @@
 
 	</head>
 	<body>
-		<audio id="audio-player" src="./images/coldplayclocks.mp3" autoplay="autoplay" loop="loop" type="audio/mpeg"></audio>
+		<audio controls autoplay  >
+			<source src="./images/coldplayclocks.mp3" type="audio/mpeg">
+		</audio>
+		<!--<audio id="audio-player" src="./images/coldplayclocks.mp3" autoplay="autoplay" loop="loop" type="audio/mpeg"></audio>-->
 		<!--<audio autoplay>
 			<source src="./images/coldplayclocks.mp3" type="audio/ogg">
 			<source src="./images/coldplayclocks.mp3" type="audio/mp3">
@@ -369,7 +372,6 @@ height: 62px; min-width: 52px; padding: 30px 8px 0px 10px; bottom: 10px; right: 
 	//	$("#audio-player").get(0).play();
 	//});
 	
-
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
