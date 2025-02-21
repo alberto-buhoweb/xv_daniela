@@ -6,6 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = isset($_POST['name']) ? strip_tags(trim($_POST['name'])) : '';
     $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 
+    echo $name;
+    echo $phone;
     // Validate form fields
     if (empty($name)) {
         $errors[] = 'Name is empty';
