@@ -49,7 +49,7 @@
 	<![endif]-->
 	</head>
 	<body>
-		<audio style="display: none;" autoplay controls src="./images/coldplayclocks.mp3" type="audio/mpeg"></audio>
+		<audio id="audio-player" style="display: none;" controls src="./images/coldplayclocks.mp3" type="audio/mpeg"></audio>
 		<!--<audio style="display: none;" autoplay controls >
 			<source src="./images/coldplayclocks.mp3" type="audio/mpeg">
 		</audio>-->
@@ -82,6 +82,7 @@
 							<h2>Tu eres parte de mi crecimiento de vida, por lo que te espero para disfrutar juntos, esta noche mágica e inolvidable</h2>
 							<div class="simply-countdown simply-countdown-one"></div>
 							<p><a href="https://calendar.app.google/GBjzrP55SHH1qmGr8" target="_blank" class="btn btn-default btn-sm">Guardar en calendario</a></p>
+							<p style="display: none;" ><a id="playbutton" class="btn btn-default btn-sm"></a></p>
 							<h2>Mayo 23, 2025 Tonalá, Jalisco</h2>
 						</div>
 					</div>
@@ -357,13 +358,8 @@ height: 62px; min-width: 52px; padding: 30px 8px 0px 10px; bottom: 10px; right: 
 
 	<script>
     var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-	//let audioPlayer = document.getElementById("audio-player");
-    //audioPlayer.play();
+	var audioplayer = document.getElementById("audio-player");
 
-	//$(document).ready(function() {
-	//	$("#audio-player").get(0).play();
-	//});
-	
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
@@ -378,6 +374,18 @@ height: 62px; min-width: 52px; padding: 30px 8px 0px 10px; bottom: 10px; right: 
         day: 23,
         enableUtc: false
     });
+
+	$('body').click(function(){
+		$("#playbutton").click();
+	});
+	
+	$("#playbutton").click(function(){
+		if (audioplayer.paused) {
+			audioplayer.play();
+		} 
+		$(this).toggleClass('pause');  /* style your toggle button according to 
+										the current state */
+	})
 </script>
 
 	</body>
