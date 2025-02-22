@@ -49,6 +49,23 @@
 	<![endif]-->
 	</head>
 	<body>
+		<button style="display: none;" type="button" id="firstbutton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+			Launch demo modal
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">				
+				<div class="modal-body">
+					<!--POner una imagen de un sobre-->
+					<div class="text-center">
+						
+						<img class="rounded" id="startbutton" src="images/wedding-invitation.png" alt="groom" class="img-responsive" data-dismiss="modal">
+					</div>					
+				</div>
+			</div>
+			</div>
+		</div>
 		<audio id="audio-player" style="display: none;" controls src="./images/coldplayclocks.mp3" type="audio/mpeg"></audio>
 		<!--<audio style="display: none;" autoplay controls >
 			<source src="./images/coldplayclocks.mp3" type="audio/mpeg">
@@ -360,6 +377,10 @@ height: 62px; min-width: 52px; padding: 30px 8px 0px 10px; bottom: 10px; right: 
     var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 	var audioplayer = document.getElementById("audio-player");
 
+	$(function() {
+		$("#firstbutton").click();
+	});
+
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
@@ -375,7 +396,7 @@ height: 62px; min-width: 52px; padding: 30px 8px 0px 10px; bottom: 10px; right: 
         enableUtc: false
     });
 
-	$('body').click(function(){
+	$('#startbutton').click(function(){
 		$("#playbutton").click();
 	});
 	
