@@ -49,7 +49,7 @@
 		}
 	</style>
 	</head>
-	<body>
+	<body id="bodyhtml">
 		<button style="display: none;" type="button" id="firstbutton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
 			Launch demo modal
 		</button>
@@ -377,6 +377,18 @@ height: 62px; min-width: 52px; padding: 30px 8px 0px 10px; bottom: 10px; right: 
 	<script>
     var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 	var audioplayer = document.getElementById("audio-player");
+	var bodyhtml = document.getElementById('bodyhtml');
+
+	bodyhtml.onfocus = function() {
+		if (audioplayer.paused) {
+			audioplayer.play();
+		} 
+	}
+	bodyhtml.onblur = function() {
+		if (audioplayer.played) {
+			audioplayer.pause();
+		}		
+	}
 
 	$('#envelopeModal').modal({
 		backdrop: 'static',
